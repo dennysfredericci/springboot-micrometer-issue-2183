@@ -1,0 +1,29 @@
+management:
+  metrics:
+    distribution:
+      percentiles:
+        http:
+          server:
+            requests: 0.90, 0.95, 0.99
+  server:
+    port: 8081
+    ssl:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: info, health, httptrace, metrics, prometheus, loggers
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+  health:
+    jms:
+      enabled: false
+
+logging:
+  level:
+    root: INFO
